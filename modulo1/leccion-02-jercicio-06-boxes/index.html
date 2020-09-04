@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boxes</title>
+  </head>
+
+  <style>
+      .col {
+          display: inline-block;
+          width: 140px;
+          margin-right: 10px
+      }
+      h2 {
+          font-size: 18px;
+          color: grey;
+      }
+      .box {
+          border: 1px solid deeppink;
+          width: 130px;
+          height: 130px;
+      }
+      .box1 {
+          background: grey;
+      }
+      .box2 {
+          background-image: url(../leccion-02-jercicio-06-boxes/image/PosterCameronHowe.png);
+          background-size: cover;
+      }
+      .box3 {
+          background-image: url(../leccion-02-jercicio-06-boxes/image/PosterGordonClark.png) ;
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-color: grey;
+      }
+
+  </style>
+  <body>
+
+    <div class="col">
+      <h2>Fondo de color</h2>
+      <div class="box box1">01</div>
+    </div>
+    <div class="col">
+        <h2>Fondo de imagen</h2>
+        <div class="box box2">02</div>
+    </div>
+    <div class="col">
+        <h2>Fondo mixto</h2>
+        <div class="box box3">03</div>
+    </div>
+
+  </body>
+</html>
