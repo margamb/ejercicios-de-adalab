@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ajustando Imagenes</title>
+    <style>
+      .square {
+        width: 100px;
+        height: 100px;
+        margin-right: 15px;
+        display: inline-block;
+        /* border: 2px black solid; */
+      }
+      .fishNerd {
+        width: 100px;
+        height: 100px;
+        padding: 10px;
+        box-sizing: border-box;
+        margin: auto;
+      }
+      .fishNerdNoBoxBorder {
+        width: 100px;
+        height: 100px;
+        padding: 10px;
+        /* box-sizing: border-box; */
+        margin: auto;
+      }
+      .fishFranki {
+        width: 100px;
+        height: auto;
+        padding: 10px;
+        /* box-sizing: border-box; */
+        margin: auto;
+        margin-left: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    
+      <div class="square">
+        <p>box-sizing</p>
+        <img
+          class="fishNerd"
+          src="../leccion-03-ejercicio-05-ajustandoImagenes/images/fishNerd.jpg"
+          alt="Fish Nerd"
+        />
+      </div>
+      <div class="square">
+        <p>NO box-sizing</p>
+        <img
+          class="fishNerdNoBoxBorder"
+          src="../leccion-03-ejercicio-05-ajustandoImagenes/images/fishNerd.jpg"
+          alt="Fish Nerd"
+        />
+      </div>
+
+      <div class="square">
+        <img
+          class="fishFranki"
+          src="../leccion-03-ejercicio-05-ajustandoImagenes/images/fishFranki.jpg"
+          alt="Fish Nerd"
+        />
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Display</title>
+    <style>
+      .size {
+        width: 100px;
+        height: 100px;
+      }
+      .block {
+        display: block;
+        background-color: hotpink;
+      }
+      .inline {
+        display: inline;
+        background-color: indigo;
+        color: lightcyan;
+      }
+      .inline-block {
+        display: inline-block;
+        background-color: lawngreen;
+      }
+      .none {
+        display: none;
+        background-color: lightcoral;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="block size"></div>
+    <div class="block size"></div>
+    <div class="block size"></div>
+
+    <div>
+      <div class="inline size">
+        El inline no le puedo dar tamaño, me coge el del contenido
+      </div>
+      <div class="inline size"></div>
+      <div class="inline size"></div>
+    </div>
+    <div class="inline-block size"></div>
+    <div class="inline-block size"></div>
+    <div class="inline-block size"></div>
+
+    <div class="none size"></div>
+    <div class="none size"></div>
+    <div class="none size"></div>
+  </body>
+</html>
