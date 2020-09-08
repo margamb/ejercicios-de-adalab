@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Puntuacion</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        width: 100%;
+        height: 100px;
+        max-width: 840px;
+        display: flex;
+        flex-direction: row;
+        margin-top: 16px;
+      }
+      .leftSquare {
+        width: 70px;
+        height: 100px;
+        background-color: olive;
+        border-radius: 5px;
+      }
+      .centerSquare {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-grow: 1;
+        padding-left: 2%;
+      }
+      .rightSquare {
+        width: 140px;
+        font-size: 12px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        align-content: space-between;
+      }
+      .btn {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .cita {
+        background-color: olive;
+        border-radius: 5px;
+        padding: 2%;
+        margin-right: 3%;
+      }
+      .presupuesto {
+        border-radius: 5px;
+        border: olive solid 2px;
+        padding: 2%;
+      }
+
+      .firstRow {
+        width: 100%;
+        display: flex;
+      }
+      .star {
+        width: 30px;
+        height: 30px;
+        border-radius: 80%;
+        background-color: olive;
+      }
+      .numberRate {
+        background-color: olive;
+        width: 30%;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        border-radius: 8%;
+      }
+
+      .ratingText {
+        width: 70%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <section class="leftSquare"></section>
+      <section class="centerSquare">
+        <div>
+          <h4><strong>Centro de fidioterapia Guzman Fernandez</strong></h4>
+          <p>Fisioterapia General</p>
+        </div>
+        <div class="btn">
+          <p class="cita">Reservar Cita</p>
+          <p class="presupuesto">Pedir Presupuesto</p>
+        </div>
+      </section>
+      <section class="rightSquare">
+        <div class="firstRow">
+          <div class="ratingText">
+            <p><strong>24 valoraciones</strong></p>
+            <p>Ver comentarios...</p>
+          </div>
+          <p class="numberRate">8,9</p>
+        </div>
+
+        <div class="star"></div>
+      </section>
+    </div>
+  </body>
+</html>
