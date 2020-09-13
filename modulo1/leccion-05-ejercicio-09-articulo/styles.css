@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  border: 8px solid black;
+}
+.container {
+  width: 80%;
+  /* height: 100vh; */
+  margin: 106px auto 106px auto;
+}
+.header {
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+.title {
+  font-size: 32px;
+  margin-bottom: 32px;
+}
+.text {
+  font-size: 18px;
+  margin-bottom: 27px;
+}
+
+.link {
+  padding: 8px 16px 8px 16px;
+  margin-left: -16px;
+}

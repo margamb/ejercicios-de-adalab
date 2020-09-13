@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tecnologias web</title>
+    <style>
+      .list {
+        list-style: none;
+      }
+      .list-item {
+        cursor: help;
+      }
+      body {
+        font-family: sans-serif;
+      }
+      .list-item {
+        position: relative;
+        /* display: inline-block; */
+        /* border-bottom: 1px dotted black; */
+      }
+      .list-item .tooltiptext {
+        visibility: hidden;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        /* Position the tooltip */
+        position: absolute;
+        z-index: 1;
+      }
+      .list-item:hover .tooltiptext {
+        visibility: visible;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Tecnologias web</h1>
+    <p>
+      Las tecnologías Web sirven para acceder a los recursos de conocimiento
+      disponibles en Internet o en las intranets utilizando un navegador. ...
+      Gracias a la forma en que está organizada la World Wide Web (WWW), los
+      usuarios pueden saltar de un recurso a otro con facilidad.
+    </p>
+    <nav>
+      <ul class="list">
+        <li class="list-item">
+          HTML
+          <span class="tooltiptext"
+            >HTML es el lenguaje con el que se define el contenido de las
+            páginas web.</span
+          >
+        </li>
+        <li class="list-item">
+          CSS
+          <span class="tooltiptext"
+            >CSS son las siglas con las que se conoce a las hojas de estilo en
+            cascada</span
+          >
+        </li>
+        <li class="list-item">
+          JavaScript
+          <span class="tooltiptext"
+            >Javascript es un lenguaje de programación que permite a los
+            desarrolladores crear acciones en sus páginas web .
+          </span>
+        </li>
+      </ul>
+    </nav>
+  </body>
+</html>

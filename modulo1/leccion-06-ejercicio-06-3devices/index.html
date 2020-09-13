@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3 devices</title>
+    <style>
+      .container {
+        margin: 20px;
+      }
+      .title {
+        font-size: 32px;
+      }
+      .parrafo {
+        font-size: 18px;
+        line-height: 24px;
+      }
+      @media all and (min-width:768px) {
+        .container {
+            margin: 30px 40px 0 40px;
+        }
+        .title {
+            font-size: 28px;
+        }
+        .parrafo {
+            font-size: 16px;
+            line-height: 20px;
+        }
+        @media all and (min-width:1140px) {
+        .container {
+            margin: 190px auto 0 auto;
+            max-width: 750px;
+        }
+        .title {
+            font-size: 42px;
+        }
+        .parrafo {
+            font-size: 24px;
+            line-height: 32px;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title"><strong>Title</strong></h1>
+      <p class="parrafo">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit officiis
+        quia, ratione ea hic quisquam dicta corporis accusantium eveniet
+        excepturi nulla aperiam voluptatibus magni, blanditiis cupiditate ab
+        corrupti deleniti nostrum? Lorem ipsum, dolor sit amet consectetur
+        adipisicing elit. Odit officiis quia, ratione ea hic quisquam dicta
+        corporis accusantium eveniet excepturi nulla aperiam voluptatibus magni,
+        blanditiis cupiditate ab corrupti deleniti nostrum?
+      </p>
+    </div>
+  </body>
+</html>
