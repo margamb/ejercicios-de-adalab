@@ -61,7 +61,7 @@ span {
   letter-spacing: normal;
   text-align: center;
   color: #54585a;
-  margin-bottom: 20px;
+  margin-top: 50px;
 }
 
 .label {
@@ -162,17 +162,18 @@ span {
   }
 
   .descktop-email {
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: row; */
     width: 60%;
   }
   .descktop-tel {
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     width: 30%;
   }
   .descktop {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
   }
 }
