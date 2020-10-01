@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desabilitando botones</title>
+    <style>
+      .btn {
+        color: white;
+        background-color: teal;
+        padding: 5px;
+        border: 1px solid black;
+      }
+
+      .btn-off {
+        opacity: 0.5;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn btn-a">play</button>
+    <button class="btn btn-b">download</button>
+
+    <script>
+      'use stricy';
+      const btnOff = document.querySelector('.btn-b');
+
+      btnOff.classList.add('btn-off');
+    </script>
+  </body>
+</html>

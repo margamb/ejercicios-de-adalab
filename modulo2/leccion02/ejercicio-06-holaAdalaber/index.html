@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hola Adalabers</title>
+  </head>
+  <body>
+    <!-- <h1>Hola <span class="name"></span>, encantada de conocerte.</h1> -->
+
+    <h1 class="element"></h1>
+
+    <script>
+      'user strict';
+
+      const nameMate = 'Ana';
+      const element = document.querySelector('.element');
+
+      //   const name = document.querySelector('.name');
+      //   name.innerHTML = nameMate;
+
+      element.innerHTML = `Hola ${nameMate}, encantada de conocerte`;
+    </script>
+  </body>
+</html>

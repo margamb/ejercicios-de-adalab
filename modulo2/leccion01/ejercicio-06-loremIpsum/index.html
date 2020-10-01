@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lorem Ipsum</title>
+  </head>
+  <body>
+    <div class="div"></div>
+
+    <script>
+      'use strict';
+
+      const div = document.querySelector('.div');
+
+      const title = 'Lorem ipsum';
+      const img = 'http://via.placeholder.com/350x150';
+      const paragraph =
+        'Lorem ipsum dolor sit amet, consectetur adipisicing elit';
+
+      div.innerHTML = `${title} <img src = ${img} /> ${paragraph}`;
+    </script>
+  </body>
+</html>

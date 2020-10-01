@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recogiendo numeros de HTML</title>
+  </head>
+  <body>
+    <p>Tengo<span class="age"> 40</span> años</p>
+    <p>He vivido <span class="sum"></span> horas</p>
+
+    <script>
+      'use strict';
+
+      const age = document.querySelector('.age');
+      const sum = document.querySelector('.sum');
+      const hours = parseInt(age.innerHTML) * 365 * 24;
+
+      sum.innerHTML = hours;
+    </script>
+  </body>
+</html>

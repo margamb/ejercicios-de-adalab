@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adalabers</title>
+  </head>
+  <body>
+    <ul>
+      <li class="li-1">Margarita</li>
+      <li class="li-2">Marta</li>
+    </ul>
+    <h1 class="title">
+      La Adalaber seleccionada es: <span class="name"></span>
+    </h1>
+
+    <script>
+      'user strict';
+      const title = document.querySelector('.title');
+      const liOne = document.querySelector('.li-1');
+      const liTwo = document.querySelector('.li-2');
+      const name = document.querySelector('.name');
+      name.textContent = liOne.innerHTML;
+    </script>
+  </body>
+</html>
+
+<!-- Crear un elemento donde poner el nombre de la seleccionada -->
+<!-- Selccionar el texto dentro primer elemento de la lista -->
+<!-- document.querySelector('.password').innerHTML = '********'; -->

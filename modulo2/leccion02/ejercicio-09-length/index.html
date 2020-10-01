@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cuantas letras tiene tu nombre</title>
+  </head>
+  <body>
+    <p class="sentence"></p>
+
+    <script>
+      'use strict';
+      const sentence = document.querySelector('.sentence');
+      const name = 'Marga Ramos Campos';
+
+      sentence.innerHTML = ` El nombre de mi compañera es ${name}, y esta compuesto por ${name.length} caracteres `;
+    </script>
+  </body>
+</html>
