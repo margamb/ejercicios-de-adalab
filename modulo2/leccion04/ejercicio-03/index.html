@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ticket con IVA</title>
+  </head>
+  <body>
+    <script>
+      'use strict';
+
+      // 10 * 21 / 100
+      //2,1 + 10
+
+      function total(precio) {
+        const iva = precio * 0.21;
+
+        return `Precio sin IVA: ${precio} , IVA: ${iva} y Total: ${
+          precio + iva
+        }`;
+      }
+
+      console.log(total(10));
+    </script>
+  </body>
+</html>

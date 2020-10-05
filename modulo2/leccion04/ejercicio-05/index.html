@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>querySelector para todas</title>
+  </head>
+  <body>
+    <p class="greeting">Hello</p>
+    <p class="greeting">Hi</p>
+    <p class="farewell">Bye</p>
+
+    <script>
+      'use strict';
+
+      //   const greetings = document.querySelector('.greeting');
+
+      function getEl(greeting) {
+        return document.querySelector(greeting);
+      }
+
+      //   const getEl = document.querySelector  (esto es lo mismo que la funcion anterior)
+
+      const pEl = getEl('.farewell');
+
+      console.log(pEl);
+
+      //   greetings.innerHTML = 'hi Marga';
+    </script>
+  </body>
+</html>

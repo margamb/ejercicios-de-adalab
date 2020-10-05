@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Año bisiesto</title>
+  </head>
+  <body>
+    <!-- Años bisiestos -> divisibles entre 4 
+        primer año bisiesto 0 - 4 - 8...
+        Si estamos en el año 3 -> apareciese en la consola el '4'
+    -->
+
+    <script>
+      'use strict';
+
+      //year %  4 === 0 / && year % 100 !== 0 / year % 400 === 0
+      //  if ((year % 100 != 0 && year % 4 == 0) || year % 400 == 0)
+
+      function isLeapYear(year) {
+        if ((year % 100 != 0 && year % 4 == 0) || year % 400 == 0) {
+          return `${year} is leap year`; //return true
+        } else {
+          return `${year} is not leap year`; //return false
+        }
+      }
+
+      function isLeap(year) {
+        if (year % 400 === 0) {
+          return true;
+        }
+
+        if (year % 100 === 0) {
+          return false;
+        }
+
+        if (year % 4 === 0) {
+          return true;
+        }
+
+        return false;
+      }
+
+      function nextLeapYear(year) {
+        while (!isLeap(year)) {
+          year++;
+        }
+        return year;
+      }
+
+      function printNextLeapYear(year) {
+        console.log(
+          `El proximo año bisiesto despues de ${year} es el ${nextLeapYear(
+            year
+          )}`
+        );
+      }
+
+      printNextLeapYear(97);
+    </script>
+  </body>
+</html>

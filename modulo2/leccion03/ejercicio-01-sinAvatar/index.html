@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi primer código JavaScript</title>
+  </head>
+  <body>
+    <div class="user">
+      <h1 class="user__name">Bill</h1>
+      <img class="user__avatar" />
+    </div>
+
+    <script>
+      'use strict';
+
+      // avatar por defecto
+      const DEFAULT_AVATAR = 'http://placehold.it/300x300';
+      // avatar que eligió el usuario al registrarse
+      // let userAvatar = 'http://www.fillmurray.com/300/300';
+      let userAvatar = '';
+
+      let avatar = document.querySelector('.user__avatar');
+      avatar.src = userAvatar || DEFAULT_AVATAR;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notificaciones arcoiris</title>
+    <style>
+      .success {
+        border: 1px solid rgb(37, 73, 1);
+        background-color: chartreuse;
+        color: rgb(37, 73, 1);
+      }
+      .error {
+        border: 1px solid rgb(117, 16, 3);
+        background-color: red;
+        color: rgb(117, 16, 3);
+      }
+      .warning {
+        border: 1px solid rgb(223, 201, 5);
+        background-color: yellow;
+        color: rgb(223, 201, 5);
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h3 class="title warning">NOTIFICACION</h3>
+      <p class="text">Mensaje por defecto</p>
+    </div>
+
+    <script>
+      'use stric';
+
+      const title = document.querySelector('.title');
+      const text = document.querySelector('.text');
+      const success = document.querySelector('.success');
+      const error = document.querySelector('.error');
+      const warning = document.querySelector('.warning');
+
+      if (title.classList.contains('warning')) {
+        title.innerHTML = 'AVISO';
+        text.innerHTML = 'Tenga cuidado';
+      } else if (title.classList.contains('error')) {
+        title.innerHTML = 'ERROR';
+        text.innerHTML = 'Ha surgido un error';
+      } else if (title.classList.contains('success')) {
+        title.innerHTML = 'CORRECTO';
+        text.innerHTML = 'Los datos son correctos';
+      }
+    </script>
+  </body>
+</html>
