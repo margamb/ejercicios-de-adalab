@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Variable global</title>
+  </head>
+  <body>
+    <script>
+      // modificamos una variable de ámbito global
+      let secretLetter = 'y';
+      function mySecretLetter() {
+        secretLetter = 'x';
+        return secretLetter;
+      }
+      console.log(mySecretLetter()); // devuelve "x"
+      console.log(secretLetter); // devuelve "x"
+    </script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Combinando funciones</title>
+  </head>
+  <body>
+    <p class="number">2</p>
+
+    <script>
+      'use strict';
+
+      //   function getEl(greeting) {
+      //     const element = document.querySelector(greeting);
+      //     if (!element) {
+      //       console.log(
+      //         `No existe ningún elemento con clase, id o tag llamado ${greeting}`
+      //       );
+      //     }
+      //     return element;
+      //   }
+
+      const number = document.querySelector('.number');
+
+      function getEl(greeting) {
+        return document.querySelector(greeting);
+        const num = parseInt(number.innerHTML);
+        console.log(num);
+      }
+      const pEl = getEl('.number');
+      console.log(pEl);
+
+      function parImpar(number) {
+        if (number % 2 === 0) {
+          return 'par';
+        } else {
+          return 'impar';
+        }
+      }
+
+      const number1 = parImpar(number);
+      console.log(parImpar(pEl));
+    </script>
+  </body>
+</html>

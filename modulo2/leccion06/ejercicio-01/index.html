@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bio de Adalabers</title>
+  </head>
+  <body>
+    <p class="bio"></p>
+    <p class="bio1"></p>
+
+    <script>
+      'use strict';
+
+      const adalaber1 = {
+        name: 'Susana',
+        age: 34,
+        job: 'periodista',
+      };
+
+      const adalaber2 = {
+        name: 'Rocio',
+        age: 25,
+        job: 'actriz',
+      };
+
+      const bio = document.querySelector('.bio');
+      const bio1 = document.querySelector('.bio1');
+
+      bio.innerHTML = `${adalaber1.name}, ${adalaber1.age} años, ${adalaber1.job}`;
+      bio1.innerHTML = `${adalaber2.name}, ${adalaber2.age} años, ${adalaber2.job}`;
+    </script>
+  </body>
+</html>

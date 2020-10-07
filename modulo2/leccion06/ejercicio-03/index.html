@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bio de Adalabers 2t</title>
+  </head>
+  <body>
+    <script>
+      'use strict';
+
+      const adalaber1 = {
+        name: 'Susana',
+        age: 34,
+        job: 'periodista',
+      };
+      adalaber1.showBio = function () {
+        return (
+          'Mi nombre es ' +
+          this.name +
+          ' tengo ' +
+          this.age +
+          ' soy ' +
+          this.job
+        );
+      };
+
+      const adalaber2 = {
+        name: 'Rocio',
+        age: 25,
+        job: 'actriz',
+      };
+      adalaber2.showBio = function () {
+        return (
+          'Mi nombre es ' +
+          this.name +
+          ' tengo ' +
+          this.age +
+          ' soy ' +
+          this.job
+        );
+      };
+      console.log(adalaber2.showBio());
+    </script>
+  </body>
+</html>

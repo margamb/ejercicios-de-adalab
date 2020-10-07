@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Investigando Event</title>
+  </head>
+  <body>
+    <button class="btn">Click</button>
+
+    <script>
+      'use strict';
+
+      const btn = document.querySelector('.btn');
+
+      function handlerBtn(event) {
+        console.log(event.type + 'hello');
+      }
+
+      btn.addEventListener('click', handlerBtn);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jugando con el teclado</title>
+    <style>
+      .red {
+        background-color: red;
+      }
+      .morado {
+        background-color: indigo;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      'use strict';
+
+      const r = 82;
+      const m = 77;
+
+      function color(event) {
+        if (event.keyCode === r) {
+          document.body.classList.remove('morado');
+          document.body.classList.add('red');
+        } else if (event.keyCode === m) {
+          document.body.classList.remove('red');
+          document.body.classList.add('morado');
+        }
+      }
+
+      window.addEventListener('keydown', color);
+    </script>
+  </body>
+</html>

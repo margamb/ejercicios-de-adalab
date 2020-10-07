@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Informacion instantanea</title>
+  </head>
+  <body>
+    <input class="input" type="text" />
+    <p class="text"></p>
+
+    <script>
+      'use strict';
+
+      const input = document.querySelector('.input');
+      const text = document.querySelector('.text');
+
+      // input.addEventListener('input', (event) => {
+      //   text.innerHTML = event.target.value;
+      // });
+
+      input.addEventListener('input', (event) => {
+        text.innerHTML = event.currentTarget.value;
+      });
+    </script>
+  </body>
+</html>

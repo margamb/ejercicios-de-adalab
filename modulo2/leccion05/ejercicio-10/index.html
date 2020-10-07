@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Qhe vemos esta noche?</title>
+  </head>
+  <body>
+    <button class="btn">Empezar</button>
+    <ul class="films"></ul>
+
+    <script>
+      'use strict';
+
+      //   const inception = document.createElement('li');
+      //   inception.textContent = 'Inception';
+      //   inception.addEventListener('click', log);
+
+      const inception = 'Inception';
+      const theButterFlyEffect = 'The butterfly effect';
+      const eternalSunshineOfTheSM = 'Eternal sunshine of the spotless mind';
+      const blueVelvet = 'Blue velvet';
+      const split = 'Split';
+
+      const btn = document.querySelector('.btn');
+      const films = document.querySelector('.films');
+
+      function writeList(event) {
+        // event.preventDefault();
+        films.innerHTML = `<li>${inception}</li> <li>${theButterFlyEffect}</li> <li>${eternalSunshineOfTheSM}</li> <li>${blueVelvet}</li> <li>${split}</li>`;
+      }
+
+      btn.addEventListener('click', writeList);
+
+      //   function log(event) {
+      //     console.log(event.target);
+      //   }
+
+      //   inception.addEventListener('click', log);
+    </script>
+  </body>
+</html>

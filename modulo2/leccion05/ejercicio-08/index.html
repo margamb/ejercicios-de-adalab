@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mas botones</title>
+    <style>
+      .btn {
+        background-color: lawngreen;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button class="click">Click</button>
+    <button class="click">Click</button>
+    <button class="click">Click</button>
+    <button class="click">Click</button>
+    <button class="click">Click</button>
+    <button class="click">Click</button>
+    <button class="click">Click</button>
+
+    <script>
+      'use strict';
+
+      //   const button = document.querySelector('.click');
+      const buttons = document.getElementsByClassName('click');
+
+      function handleClick(event) {
+        const selectedClick = event.currentTarget;
+
+        selectedClick.classList.toggle('btn');
+        console.log('click');
+      }
+
+      for (let button of buttons) {
+        button.addEventListener('click', handleClick);
+      }
+    </script>
+  </body>
+</html>

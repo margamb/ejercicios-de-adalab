@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Investigando elementos</title>
+  </head>
+  <body>
+    <input class="text" type="text" />
+
+    <script>
+        'use strict';
+        const text = document.querySelector('.text');
+
+        function write() {
+            // console.dir(`Hola ${text.value}`);
+            // console.dir(`Hola ${text.nodeName}`);
+            console.dir(`Hola ${text.required}`);
+        }
+
+        text.addEventListener('input', write);
+        
+    </script>
+  </body>
+</html>
+
+
+<script>
+
+  
+
+//   function showName() {
+//     console.log(`Hola ${name.value}`);
+//   }
+
+//   button.addEventListener('click', showName);

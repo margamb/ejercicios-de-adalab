@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculador de modelo caja</title>
+  </head>
+  <body>
+    <script>
+      'use strict';
+
+      function caja(borderBox, width, padding, borderSize) {
+        let contentWidth;
+        let totalWidth;
+
+        if (borderBox) {
+          contentWidth = width + padding + borderSize;
+          totalWidth = borderBox + width + padding + borderSize;
+        } else {
+          contentWidth = width + padding + borderSize;
+          totalWidth = width + padding + borderSize;
+        }
+
+        return `El ancho del contenido es: ${contentWidth}px y el ancho total de la caja es: ${totalWidth}px`;
+        //const resultado = borderBox + width + padding + borderSize;
+      }
+
+      const modeloCaja = caja(2, 30, 20, 30);
+    </script>
+  </body>
+</html>
