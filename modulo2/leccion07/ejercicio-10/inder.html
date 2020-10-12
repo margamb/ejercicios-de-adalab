@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const items = [
+        'Ada',
+        1815,
+        ['Informática', 'Matemática', 'Escritora'],
+        {
+          mother: 'Anna Isabella',
+          father: 'Lord Byron',
+        },
+      ];
+
+      for (let i = 0; i < items.length; i++) {
+        console.log(
+          `El dato es ${JSON.stringify(items[i])} y esta en la posicion ${[
+            i,
+          ]} es de tipo ${typeof items[i]}`
+        );
+      }
+    </script>
+  </body>
+</html>

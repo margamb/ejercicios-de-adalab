@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tenemos mucho en común</title>
+  </head>
+  <body>
+    <form action="">
+      <label for="">Cuales son tus dos peli favoritas?</label>
+      <input class="js-input" type="text" name="films" />
+      <button class="js-submit" type="submit">Enviar</button>
+    </form>
+    <div class="js-text"></div>
+
+    <script>
+      const input = document.querySelector('.js-input');
+      const submit = document.querySelector('.js-submit');
+      const text = document.querySelector('.js-text');
+
+      const formMovies = [];
+
+      function getSubmit(ev) {
+        event.preventDefault();
+        formMovies.push(input.value);
+        input.value = '';
+        printMessage();
+      }
+
+      function printMessage() {
+        text.innerHTML = '';
+        for (movie in formMovies) {
+          text.innerHTML += `<p>¡A mí también me encantó "${formMovies[movie]}"! Tenemos mucho en común, humana.</p>`;
+        }
+      }
+
+      submit.addEventListener('click', getSubmit);
+
+      //   function setFormMovies(ev) {
+      //     const inputName = ev.currentTarget.name;
+      //     const inputValue = ev.currentTarget.value;
+      //     // console.log(inputName, inputValue);
+
+      //     // formMovies[inputName] = inputValue;
+      //     // formMovies['paragraph'] = function () {
+      //     //   text.innerHTML = inputValue;
+      //     // };
+      //     // formMovies.paragraph();
+      //   }
+    </script>
+  </body>
+</html>

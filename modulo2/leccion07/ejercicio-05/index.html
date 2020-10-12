@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>La media</title>
+  </head>
+  <body>
+    <script>
+      const numbers = [2, 3, 5, 7, 3, 2];
+
+      //   let acc = 0;
+
+      //   for (let i = 0; i < numbers.length; i++) {
+      //     acc += numbers[i] / 6;
+      //   }
+
+      //   console.log(`La media de los numeros es : ${acc}`);
+
+      const average = function (numbers) {
+        let acc = 0;
+        for (let i = 0; i < numbers.length; i++) {
+          acc += numbers[i] / numbers.length;
+        }
+        return acc;
+      };
+
+      function sum(arr) {
+        return arr.reduce((acc, num) => acc + num, 0);
+      }
+
+      const sum2 = (arr) => arr.reduce((acc, num) => acc + num, 0);
+      const avg = (arr) => sum2(arr) / arr.length;
+
+      console.log(average(numbers));
+      console.log(average([2, 3, 5, 7, 3, 2]));
+      console.log(sum2([2, 3, 5, 7, 3, 2]));
+      console.log(avg([2, 3, 5, 7, 3, 2]));
+    </script>
+  </body>
+</html>

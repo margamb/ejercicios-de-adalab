@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>repaso</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        border: lightgreen 1px solid;
+      }
+      .red {
+        background-color: red;
+      }
+      .green {
+        background-color: greenyellow;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>2.5 Eventos</h1>
+    <p class="text">Hola</p>
+    <button class="btn">Click</button>
+
+    <form action="">
+      <input class="name" type="text" />
+      <button class="btnForm">Click</button>
+    </form>
+    <p class="textName"></p>
+
+    <p class="repeatText">Ejercicio 3</p>
+
+    <div class="box"></div>
+
+    <input class="inputText" type="text" />
+    <p class="getText"></p>
+    <button class="reset06">Reset</button>
+
+    <button class="btn07">AddClass</button>
+    <button class="btn07">AddClass</button>
+
+    <script>
+      'use strict';
+
+      const text = document.querySelector('.text');
+      const btn = document.querySelector('.btn');
+
+      const changeText = function () {
+        text.innerHTML = 'Mi primer click.';
+      };
+
+      btn.addEventListener('click', changeText);
+      /////////
+
+      const name = document.querySelector('.name');
+      const btnForm = document.querySelector('.btnForm');
+      const textName = document.querySelector('.textName');
+
+      const getName = function (e) {
+        e.preventDefault();
+        // console.log(`Hola ${name.value}`);
+        textName.innerHTML = `Hola ${name.value}`;
+      };
+      btnForm.addEventListener('click', getName);
+      ///////
+
+      const repeatText = document.querySelector('.repeatText');
+
+      const repeatTextFunction = function () {
+        repeatText.innerHTML += 'Ejercicio 3 ';
+      };
+      repeatText.addEventListener('mouseover', repeatTextFunction);
+
+      /////
+      const box = document.querySelector('.box');
+      const r = 82;
+      const m = 77;
+      const changeColorDiv = function (event) {
+        console.log(event.keyCode);
+        if (event.keyCode === r) {
+          box.classList.add('red');
+          box.classList.remove('green');
+        } else if (event.keyCode === m) {
+          box.classList.add('green');
+          box.classList.remove('red');
+        }
+      };
+      document.addEventListener('keydown', changeColorDiv);
+      ///////////
+
+      const input06 = document.querySelector('.inputText');
+      const p06 = document.querySelector('.getText');
+      const reset06 = document.querySelector('.reset06');
+
+      const writeText = function (event) {
+        p06.innerHTML = event.currentTarget.value;
+      };
+
+      const reset = function (event) {
+        input06.value = '';
+        p06.innerHTML = '';
+      };
+
+      input06.addEventListener('input', writeText);
+      reset06.addEventListener('click', reset);
+      //////
+
+      const btn07 = document.querySelectorAll('.btn07');
+
+      const changeColorBtn07 = function (event) {
+        const selectedClick = event.currentTarget;
+        selectedClick.classList.toggle('red');
+      };
+
+      for (let i = 0; i < btn07.length; i++) {
+        btn07[i].addEventListener('click', changeColorBtn07);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crear una cestas de peras</title>
+  </head>
+  <body>
+    <script>
+      'use strict';
+
+      const pearsBasket = {
+        numMax: 20,
+        numMin: 5,
+        numCurrent: 10,
+        numInitial: 6,
+      };
+
+      console.log((pearsBasket.numCurrent += 1));
+      console.log((pearsBasket.numCurrent -= 1));
+      console.log((pearsBasket.numCurrent = pearsBasket.numInitial));
+
+      //   function addOne() {
+      //     pearsBasket.numCurrent += 1;
+      //   }
+
+      pearsBasket.addOne = function () {
+        this.numCurrent += 1;
+      };
+
+      //   function addFruit(basket) {
+      //     if (!basket.numCurrent) {
+      //       console.error('No good basket');
+      //       return;
+      //     }
+      //     basket.numCurrent += 1;
+      //   }
+      //   const appleBasket = {
+      //     numCurrent: 11,
+      //   };
+
+      console.log('pears:', (pearsBasket.numCurrent += 1));
+      //   pearsBasket.addOne();
+      //   addFruit(pearsBasket);
+      //   console.log('pears:', pearsBasket.numCurrent);
+      //   console.log('apples:', appleBasket.numCurrent);
+      //   addFruit(appleBasket);
+      //   addFruit(appleBasket);
+      //   console.log('apples:', appleBasket.numCurrent);
+    </script>
+  </body>
+</html>

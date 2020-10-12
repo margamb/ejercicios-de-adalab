@@ -1,4 +1,4 @@
-const teacher = document.querySelector('.teacher');
+const teachers = document.querySelector('.teachers');
 
 const favorite = document.querySelector('.favorite');
 function handleClick(event) {
@@ -8,4 +8,4 @@ function handleClick(event) {
   console.log('click');
 }
 
-teacher.addEventListener('click', handleClick);
+teachers.addEventListener('click', handleClick);

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A story of Adalabers</title>
+  </head>
+  <body>
+    <script>
+      'use strict';
+
+      const adalabers = [
+        {
+          name: 'Maria',
+          age: 29,
+          job: 'diseñadora',
+        },
+        { name: 'Lucia', age: 31, job: 'ingenieria quimica' },
+        { name: 'Susana', age: 34, job: 'periodista' },
+        { name: 'Rocio', age: 25, job: 'actriz' },
+        { name: 'Inmaculada', age: 21, job: 'diseñadora' },
+      ];
+
+      const countAdalabers = function () {
+        console.log(adalabers.length);
+      };
+      countAdalabers();
+
+      const averageAge = function (adalabers) {
+        let acc = 0;
+        for (let i = 0; i < adalabers.length; i++) {
+          acc += adalabers[i].age / adalabers.length;
+        }
+
+        return acc;
+      };
+      console.log(averageAge(adalabers));
+
+      //El map le pasas una array y te la transforma
+      //Coge toda la array de objeto y con el map solo coge la de edad.
+      const ages = adalabers.map((adalaber) => adalaber.age);
+      //   const data = adalabers.map((adalaber) => ({
+      //     name: 'Star ' + adalaber.name,
+      //     age: adalaber.age,
+      // }));
+      const smallerAge = Math.min(...ages); //Math.min
+
+      console.log(smallerAge);
+      console.log(ages);
+
+      //filter para hacer el de diseñadoras
+
+      const jobs = adalabers.map((adalab) => adalab.job);
+
+      const adalabDesign = jobs.filter((work) => work === 'diseñadora');
+      console.log(`Hay ${adalabDesign.length} ${adalabDesign}`);
+
+      console.log(jobs);
+    </script>
+  </body>
+</html>

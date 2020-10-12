@@ -89,3 +89,18 @@
   height: 20px;
   margin-top: 2px;
 }
+
+.logosStar {
+  width: 300px;
+}
+
+/* .logosStar:hover,
+.logosStar:focus {
+  fill: #e17334; 
+  filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg)
+    brightness(104%) contrast(97%);
+} */
+
+.logosStar path {
+  fill: #e17334;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Botones de alarma</title>
+    <style>
+      body {
+        background-color: white;
+      }
+      .red {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn">ALARMA</button>
+    <button class="btn">ALARMA</button>
+    <button class="btn">ALARMA</button>
+
+    <script>
+      'use strict';
+
+      const buttons = document.querySelectorAll('.btn');
+
+      const changeColor = function (ev) {
+        document.body.classList.toggle('red');
+      };
+
+      for (let i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', changeColor);
+        console.log('click');
+      }
+    </script>
+  </body>
+</html>

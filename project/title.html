@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css"
+      integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY="
+      crossorigin="anonymous"
+    />
+    <title>Title</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .secondDiv {
+        /* width: 320px; */
+        height: 200px;
+        background-color: lightgray;
+        display: none;
+      }
+      .icons {
+        font-size: 18px;
+        color: lawngreen;
+      }
+      .iconsClick {
+        transition: all 0.4s ease;
+        transform: rotate(-90deg);
+
+      }
+      .title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* width: 320px; */
+        height: 40px;
+        background-color: lightcoral;
+      }
+      .share {
+        flex-grow: 1;
+        padding-left: 10px;
+        backround
+      }
+
+      .show {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="title">
+        <i class="fa fa-share-alt icons" aria-hidden="true"></i>
+        <h2 class="share">Comparte</h2>
+        <i class="fa fa-check icons iconsClick" aria-hidden="true"></i>
+      </div>
+
+      <div class="secondDiv">
+        <h1>Hola</h1>
+        <h2>hello</h2>
+      </div>
+      <div class="title">
+        <i class="fa fa-share-alt icons" aria-hidden="true"></i>
+        <h2 class="share">Comparte</h2>
+        <i class="fa fa-check icons iconsClick" aria-hidden="true"></i>
+      </div>
+
+      <div class="secondDiv">
+        <h1>Hola</h1>
+        <h2>hello</h2>
+      </div>
+    </section>
+
+    <script>
+      const btn = document.getElementsByClassName('iconsClick');
+      const secondDiv = document.getElementsByClassName('secondDiv');
+
+      const showDiv = function (e) {
+        // e.preventDefault();
+        secondDiv.classList.toggle('show');
+      };
+
+      //   btn[0].addEventListener('click', showDiv);
+
+      for (let i = 0; i < btn.length; i++) {
+        btn[i].addEventListener('click', function () {
+          openArrow(i);
+        });
+      }
+
+      function openArrow(idx) {
+        // console.log('Hi');
+        // const arrows = document.getElementsByClassName('iconsClick');
+        secondDiv[idx].classList.toggle('show');
+        // btn[idx].classList.toggle('iconsClick');
+      }
+    </script>
+  </body>
+</html>
