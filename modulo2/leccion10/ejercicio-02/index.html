@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perretesss!!!!</title>
+  </head>
+  <body>
+    <button class="js-dog">Perretes!!!</button>
+    <button class="js-chihuahua">Enseñame un chihuahua!!!</button>
+    <img />
+
+    <script>
+      function getDogImage() {
+        fetch('https://dog.ceo/api/breed/chihuahua/images/random')
+          .then((response) => response.json())
+          .then((data) => {
+            const img = document.querySelector('img');
+            img.src = data.message;
+            img.alt = 'Un perro';
+          });
+      }
+      const btn = document.querySelector('.js-chihuahua');
+      btn.addEventListener('click', getDogImage);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dogs</title>
+  </head>
+  <body>
+    <p class="breeds"></p>
+    <img class="imgDog" />
+
+    <script>
+      'use strict';
+      const imgDog = document.querySelector('.imgDog');
+      const listOfBreedsUrl = 'https://dog.ceo/api/breeds/list/all';
+
+      const setDogImage = (data) => {
+        imgDog.src = data.message;
+        imgDog.alt = 'A Dog';
+      };
+
+      const getRandomBreed = (responseFromDogsApi) => {
+        const breeds = Object.keys(responseFromDogsApi.message);
+        const randomBreedPosition = Math.floor(Math.random() * breeds.length);
+        // fetchRandomFromArray(breeds).then(
+        //     randomBreedPosition =>
+        // );
+        return breeds[randomBreedPosition];
+      };
+
+      const fetchRandomFromArray = (arr) => {
+        return (
+          fetch(`https://api.rand.fun/number/integer?min=0&max=${arr.length}`)
+            .then((response) => response.json())
+            //   .then(console.log)
+            .then((data) => data.result)
+        );
+      };
+
+      const fetchImageFromBreed = (breed) => {
+        return fetch(
+          `https://dog.ceo/api/breed/${breed}/images/random`
+        ).then((res) => res.json());
+      };
+
+      fetch(listOfBreedsUrl)
+        .then((response) => response.json())
+        .then((listOfBreeds) => getRandomBreed(listOfBreeds))
+        .then((breed) => fetchImageFromBreed(breed))
+        .then(setDogImage);
+
+      //Pedir un listado de razas de perros
+      //numero aleatorio elegir una raza del listado -> pintar img
+      // p q muestre la raza
+
+      console.log(Math.floor(Math.random() * 100));
+    </script>
+  </body>
+</html>

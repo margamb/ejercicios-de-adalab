@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Christmas tree</title>
+  </head>
+  <body>
+    <script>
+      //rows
+      for (let i = 0; i <= 5; i++) {
+        for (let j = 0; j < +i; j++) {
+          document.write('^');
+        }
+        document.write('<br>');
+      }
+
+      document.write('BEST CHRISTMAS');
+      document.write('<br>');
+
+      document.write('*');
+
+      for (let i = 0; i <= 5; i++) {
+        for (let j = 0; j < +i; j++) {
+          document.write('^');
+        }
+        document.write('<br>');
+      }
+      document.write('|');
+
+      document.write('<br>');
+      document.write('<br>');
+
+      let n = 8;
+      for (i = 1; i <= n; i++) {
+        for (j = i; j < n; j++) {
+          document.write(' ');
+        }
+        for (j = 1; j <= 2 * i - 1; j++) {
+          document.write('*');
+        }
+        document.write('<br>');
+      }
+    </script>
+  </body>
+</html>

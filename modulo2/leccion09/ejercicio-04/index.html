@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi lista de tareas</title>
+    <style>
+      .completed {
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="task"></ul>
+
+    <script>
+      const tasks = [
+        { name: 'Recoger setas en el campo', completed: true },
+        { name: 'Comprar pilas', completed: true },
+        { name: 'Poner una lavadora de blancos', completed: true },
+        {
+          name:
+            'Aprender cómo se realizan las peticiones al servidor en JavaScript',
+          completed: false,
+        },
+      ];
+
+      const task = document.querySelector('.task');
+      console.log(tasks[0].name);
+
+      //   const listTask = tasks[0].name;
+      let tasksPrint = [];
+      const printTask = function () {
+        for (let i = 0; i < tasks.length; i++) {
+          tasksPrint.push(
+            `<li class=${tasks[i].completed && 'completed'}>${
+              tasks[i].name
+            }</li> <input type="checkbox" checked=${tasks[i].completed}  >`
+          );
+        }
+        task.innerHTML = tasksPrint.join('');
+      };
+
+      printTask();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lost Numbers</title>
+  </head>
+  <body>
+    <script>
+      'use strict';
+
+      const lostNumbers = [4, 8, 15, 16, 23, 42];
+
+      let even = [];
+      let three = [];
+      const bestLostNumber = function () {
+        for (let i = 0; i < lostNumbers.length; i++) {
+          if (lostNumbers[i] % 2 === 0) {
+            even.push(lostNumbers[i]);
+          }
+          if (lostNumbers[i] % 3 === 0) {
+            three.push(lostNumbers[i]);
+          }
+        }
+        console.log(even.concat(three));
+      };
+
+      bestLostNumber();
+    </script>
+  </body>
+</html>

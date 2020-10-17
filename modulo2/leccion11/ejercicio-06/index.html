@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conociendo LS -> local storage</title>
+  </head>
+  <body>
+    <form action="" method="">
+      <input class="input" type="text" value="name" />
+      <input class="input" type="text" value="surname" />
+    </form>
+    <p class="text"></p>
+    <p class="text"></p>
+
+    <script>
+      'use strict';
+      const input = document.querySelectorAll('.input');
+      const text = document.querySelectorAll('.text');
+
+      function getInput() {
+        const inputValue = input.value;
+        text.innerHTML = inputValue;
+        console.log(inputValue);
+        localStorage.setItem('name', inputValue);
+      }
+      input.addEventListener('keyup', getInput);
+
+      const name = localStorage.getItem('name');
+      console.log(name);
+    </script>
+  </body>
+</html>

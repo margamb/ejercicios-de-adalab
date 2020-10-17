@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get emoji</title>
+  </head>
+  <body>
+    <button class="js-emoji">Emoji!!!</button>
+    <p class="js-result"></p>
+
+    <script>
+      function getEmoji() {
+        fetch('https://api.rand.fun/number/integer?min=1&max=100')
+          .then((response) => response.json()) // te convierte de una string a un objeto
+          .then((data) => {
+            console.log(data);
+            document.querySelector('.js-result').innerHTML = data.result;
+          });
+      }
+      document.querySelector('.js-emoji').addEventListener('click', getEmoji);
+    </script>
+  </body>
+</html>

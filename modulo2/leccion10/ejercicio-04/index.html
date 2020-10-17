@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Listado de repos de una organizacion en Github</title>
+  </head>
+  <body>
+    <form action="">
+      <input
+        class="input"
+        type="text"
+        placeholder="introduce la organizacion"
+      />
+      <input class="btn" type="button" value="click" />
+    </form>
+    <ul class="repos"></ul>
+
+    <script>
+      'use strict';
+
+      const input = document.querySelector('.input');
+      const button = document.querySelector('.btn');
+      const ulRepos = document.querySelector('.repos');
+
+      const fetchData = function (orgname) {
+        fetch(`https://api.github.com/orgs/${orgname}`)
+          .then((response) => response.json())
+          .then((data) => fetch(data.repos_url))
+          .then((response) => response.json())
+          .then((repos) => repos.map((repo) => `<li>${repo.name}</li>`))
+          .then((names) => (ulRepos.innerHTML = names.join('')));
+      };
+
+      const getInput = function () {
+        const inputValue = input.value;
+        fetchData(inputValue);
+      };
+      button.addEventListener('click', getInput);
+
+      //   //
+      //   function getBreedsImage() {
+      //     fetch('https://dog.ceo/api/breeds/list')
+      //       .then((r => r.json())
+      //       .then(d => fetch(
+      //           'https://dog.ceo/api/breed/' + d.message[0] + '/images/random'
+      //         )
+      //       )
+      //       .then((imageResponse) => imageResponse.json())
+      //       .then((imageData) => {
+      //         const img = document.querySelector('img');
+      //         img.src = imageData.message;
+      //         img.alt = 'Un perro';
+      //       });
+      //   }
+    </script>
+  </body>
+</html>

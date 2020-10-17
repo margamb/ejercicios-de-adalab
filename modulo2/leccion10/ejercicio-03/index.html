@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Api github</title>
+  </head>
+  <body>
+    <form action="">
+      <input class="userName" type="text" name="name" id="name" />
+      <input class="btn" type="button" value="Buscar" />
+      <h3>Resultados</h3>
+      <h2 class="name"></h2>
+      <img class="img" />
+      <h2 class="repos"></h2>
+
+      <script>
+        'use strict';
+
+        const button = document.querySelector('.btn');
+        const userName = document.querySelector('.userName');
+
+        const fetchData = function (userName) {
+          fetch(`https://api.github.com/users/${userName}`)
+            .then((response) => response.json())
+            .then((data) => {
+              const img = document.querySelector('.img');
+              const repos = document.querySelector('.repos');
+              const name = document.querySelector('.name');
+              name.innerHTML = data.login;
+              img.src = data.avatar_url;
+              img.alt = 'imagen avatar';
+              repos.innerHTML = data.public_repos;
+            });
+        };
+
+        const getUsername = function () {
+          const userNameValue = userName.value;
+          fetchData(userNameValue);
+        };
+
+        button.addEventListener('click', getUsername);
+      </script>
+    </form>
+  </body>
+</html>

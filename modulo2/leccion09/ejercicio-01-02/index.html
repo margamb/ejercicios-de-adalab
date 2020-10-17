@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Numeritos</title>
+  </head>
+  <body>
+    <script>
+      'use strict';
+      const get100Numbers = function () {
+        let arr = [];
+        for (let i = 1; i <= 100; i++) {
+          arr.push(i);
+        }
+        return arr;
+      };
+
+      //console.log(get100Numbers());
+
+      const getReversed100Numbers = function () {
+        return get100Numbers().reverse();
+      };
+
+      // hace falta el return porque esta dentro de un bloque {}
+      // const a = () => {
+      //   return 3;
+      // };
+
+      // No hace falta el return, devolvera 3 automaticamente
+      // const a = () => 3;
+
+      console.log(getReversed100Numbers());
+      // console.log(a());
+    </script>
+  </body>
+</html>

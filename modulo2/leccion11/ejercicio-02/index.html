@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Star Wars</title>
+  </head>
+  <body>
+    <form action="" method="GET">
+      <input class="input" type="text" />
+      <button class="btn" type="button">Search</button>
+    </form>
+    <ul class="ulList"></ul>
+
+    <script>
+      'use strict';
+
+      const btn = document.querySelector('.btn');
+      const input = document.querySelector('.input');
+      const ulList = document.querySelector('.ulList');
+
+      function fetchData(name) {
+        fetch(`https://swapi.dev/api/people?search=${name}`)
+          .then((response) => response.json())
+          .then((data) =>
+            data.results.map(
+              (result) => `<a href=${result.url}><li>${result.name}</li></a>`
+            )
+          )
+          .then((names) => {
+            ulList.innerHTML = names.join('');
+          });
+      }
+
+      function searchCharacter() {
+        const inputValue = input.value;
+        fetchData(inputValue);
+        console.log(inputValue);
+      }
+      btn.addEventListener('click', searchCharacter);
+    </script>
+  </body>
+</html>
