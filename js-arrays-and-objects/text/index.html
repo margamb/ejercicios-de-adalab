@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      <input type="text" class="movieName" name="name" id="name" />
+      <input class="btn" type="button" value="Buscar" />
+    </form>
+    <section>
+      <img src="" alt="" />
+      <h2>titlu movie</h2>
+    </section>
+
+    <script>
+      'use strict';
+
+      const button = document.querySelector('.btn');
+      const movieName = document.querySelector('.movierName');
+
+      function getData() {
+        fetch(`http://api.tvmaze.com/search/shows?q=tronos`)
+          .then((response) => response.json())
+          .then((data) => {
+            // const img = document.createElement('img');
+            // const titleMovie = document.querySelector('.titleMovie');
+            // img.src = data[0].show.image.medium;
+            // img.alt = 'poster movie';
+            // titleMovie.innerHTML = data.name;
+          });
+      }
+
+      console.log(getData());
+
+      //   .then((data) => {
+      //           const img = document.querySelector('.img');
+      //           const repos = document.querySelector('.repos');
+      //           const name = document.querySelector('.name');
+      //           name.innerHTML = data.login;
+      //           img.src = data.avatar_url;
+      //           img.alt = 'imagen avatar';
+      //           repos.innerHTML = data.public_repos;
+      //         });
+
+      //   const getMoviesSearch = function () {
+      //     const userNameValue = userName.value;
+      //     fetchData(userNameValue);
+      //   };
+
+      //   function renderMovies() {}
+
+      //   button.addEventListener('click', renderMovies);
+    </script>
+  </body>
+</html>

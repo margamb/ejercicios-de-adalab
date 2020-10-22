@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Autocompletado</title>
+  </head>
+  <body>
+    <form action="">
+      <input
+        class="inputName"
+        type="text"
+        name="firstname"
+        placeholder="Name"
+      />
+      <input
+        class="inputSurname"
+        type="text"
+        name="surname"
+        placeholder="surname"
+      />
+      <input
+        class="inputPhone"
+        type="number"
+        name="phone"
+        placeholder="phone"
+      />
+    </form>
+
+    <select name="data" id="userData">
+      <option value="dayana">Dayana</option>
+      <option value="miguel">Miguel</option>
+      <option value="ivan">Ivan</option>
+    </select>
+
+    <script>
+      'use strict';
+      const data = [
+        {
+          name: 'Dayana',
+          surname: 'Mar',
+          phone: 555666333,
+        },
+        {
+          name: 'Miguel',
+          surname: 'Mil',
+          phone: 666666666,
+        },
+        {
+          name: 'Ivan',
+          surname: 'Iv',
+          phone: 999999999,
+        },
+      ];
+
+      const userData = document.querySelector('#userData');
+      const inputName = document.querySelector('.inputName');
+      const inputSurname = document.querySelector('.inputSurname');
+      const inputPhone = document.querySelector('.inputPhone');
+
+      function chooseUser() {
+        if (userData.value === 'dayana') {
+          inputName.value = data[0].name;
+          inputSurname.value = data[0].surname;
+          inputPhone.value = data[0].phone;
+        } else if (userData.value === 'miguel') {
+          inputName.value = data[1].name;
+          inputSurname.value = data[1].surname;
+          inputPhone.value = data[1].phone;
+        } else if (userData.value === 'ivan') {
+          inputName.value = data[2].name;
+          inputSurname.value = data[2].surname;
+          inputPhone.value = data[2].phone;
+        }
+      }
+
+      function chooseUser() {
+        const idx = data.findIndex(
+          (el) => el.name.toLowerCase() === userData.value
+        );
+
+        inputName.value = data[idx].name;
+        inputSurname.value = data[idx].surname;
+        inputPhone.value = data[idx].phone;
+      }
+
+      userData.addEventListener('change', chooseUser);
+    </script>
+  </body>
+</html>

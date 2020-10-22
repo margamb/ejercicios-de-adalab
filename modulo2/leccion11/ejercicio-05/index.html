@@ -4,32 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mi tema preferido</title>
-    <style>
-      .dark {
-        color: white;
-        background-color: black;
-      }
-      .light {
-        color: black;
-        background-color: chartreuse;
-      }
-    </style>
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <h1>Movies</h1>
-    <p>Slither</p>
-    <p>The thing</p>
-    <form action="">
-      <input type="radio" id="Gore" name="gender" value="gore" />
-      <label for="male">Gore</label><br />
-      <input type="radio" id="fiction" name="gender" value="fictio" />
-      <label for="female">Science fiction</label><br />
-    </form>
-
-    <script>
-      'use strict';
-
-      const color =
-    </script>
+    <div class="container">
+      <h1 class="title">Tema favorito</h1>
+      <div class="boxes">
+        <div class="light-box">
+          <label for="light">
+            <input
+              class="radiobtn radiobtn-light"
+              type="radio"
+              id="light"
+              name="theme"
+              value="light"
+            />
+            Light theme
+          </label>
+          <div class="light-img"></div>
+        </div>
+        <div class="dark-box">
+          <label for="dark">
+            <input
+              class="radiobtn radiobtn-light"
+              type="radio"
+              id="dark"
+              name="theme"
+              value="dark"
+            />
+            Dark theme
+          </label>
+          <div class="dark-img"></div>
+        </div>
+      </div>
+    </div>
+    <script src="./main.js"></script>
   </body>
 </html>

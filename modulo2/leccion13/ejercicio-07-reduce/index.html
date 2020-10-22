@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reduce</title>
+  </head>
+  <body>
+    <script>
+      'use strict';
+
+      //ejercicio - 7
+
+      const times = [56, 9, 45, 28, 35];
+      const result = times.reduce((acc, number) => acc + number, 0);
+      console.log(result);
+      const media = result / times.length;
+      console.log(media);
+
+      // ejercicio - 8
+
+      const runners = [
+        { name: 'Gregory Goyle', time: 56 },
+        { name: 'Nymphadora Tonks', time: 9 },
+        { name: 'Luna Lovegood', time: 45 },
+        { name: 'Cedric Diggory', time: 28 },
+        { name: 'Cho Chang', time: 35 },
+      ];
+
+      //faster -> acumulador y runner cada uno de los elementos
+      //en faster es un objeto
+      //sobreescribo el c=valor cn el mas rapido
+      // lo q hace es  q todo el tiempo va haciendo la comparacion de faster.
+
+      const winnerrunner = function (faster, runner) {
+        if (runner.time < faster.time) {
+          return runner;
+        } else {
+          return faster;
+        }
+      };
+      const winner = runners.reduce(winnerrunner);
+      console.log('ganador', winner.name);
+
+      //ejercicio - 9 -> filter
+
+      const runners1 = [
+        { name: 'Gregory Goyle', time: 56, student: true },
+        { name: 'Nymphadora Tonks', time: 9, student: false },
+        { name: 'Luna Lovegood', time: 45, student: true },
+        { name: 'Cedric Diggory', time: 28, student: true },
+        { name: 'Cho Chang', time: 35, student: true },
+      ];
+
+      const winRunnner = runners1.filter((name) => name.student === true);
+      console.log(winRunnner);
+
+      //   const studentWin = winRunnner.reduce((faster, runner) => {
+      //     if (runner.time < faster.time) {
+      //       return runner;
+      //     } else {
+      //       return faster;
+      //     }
+      //   });
+      const studentWin = winRunnner.reduce(
+        (faster, runner) => runner.time < faster.time
+      );
+
+      console.log(studentWin);
+    </script>
+  </body>
+</html>

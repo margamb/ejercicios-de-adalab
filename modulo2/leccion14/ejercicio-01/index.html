@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asincronia</title>
+  </head>
+  <body>
+    <p class="time">0</p>
+
+    <p class="msg">Se ha guardado correctamente</p>
+
+    <p class="message"></p>
+    <button type="button" class="btn">Estoy despierta!</button>
+
+    <p class="hours"></p>
+
+    <script>
+      'use strict';
+
+      let counter = 0;
+      let temp;
+
+      const incrementAnsShowCounter = () => {
+        counter++;
+        const time = document.querySelector('.time');
+        time.innerHTML = counter;
+        if (counter === 10) {
+          clearInterval(temp);
+        }
+      };
+      temp = setInterval(incrementAnsShowCounter, 1000);
+
+      //setTimeout
+      const removeMsg = () => {
+        const msg = document.querySelector('.msg');
+        msg.innerHTML = '';
+      };
+
+      setTimeout(removeMsg, 6000);
+
+      //ejercicio 07
+      const button = document.querySelector('.btn');
+      const message = document.querySelector('.message');
+      let temp;
+      function showMessage() {
+        message.innerHTML = 'Te has dormido?';
+      }
+      temp = setTimeout(showMessage, 5000); // si quito esta linea no comenzaria a contar los 5 segundos, hasta q nadie haga click al boton. Al cargar la pagina empiece a contar 5 segundo y los siguientes 5 segundos sera cuando hagamos click en el boton
+
+      function handler() {
+        //vaciamos el mensaje
+        message.innerHTML = '';
+        //volvemos a poner en marcha el setTimeout
+        temp = setTimeout(showMessage, 5000);
+      }
+
+      button.addEventListener('click', handler);
+
+      // ejercicio de fechas
+
+      let interval; //let pq va a ir cambiando todo el rato
+
+      const painthour = () => {
+        const date = new Data(); //crear un nuevo objeto
+        const h =
+          date.gethours() + ':' + date.getMinutes() + ':' + data.getSeconds();
+        document.querySelector('.hour').innerHTML = h;
+      };
+      interval = setInterval(painthour, 1000);
+    </script>
+  </body>
+</html>

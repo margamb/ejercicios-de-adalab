@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>De viaje</title>
+    <style>
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      .image-container {
+          width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <div class="image-container">
+            <!-- Aqui iria la imagen -->
+        </div>
+        <label for="city-select">Choose city</label>
+        <select name="city" id="city-select">
+            <option value="madrid">Madrid</option>
+            <option value="newyork" selected>New York</option>
+            <option value="paris">Paris</option>
+          </select>
+    </div>  
+    
+    
+    <script>
+        'use strict';
+        const citySelect = document.querySelector('#city-select'); 
+        const container = document.querySelector('.image-container'); //donde ira la imagen
+        const newItem = document.createElement('img'); // elemento creado
+        container.appendChild(newItem);// Añadimos el newItem como hijo del container (de momento esta vacio)
+
+        function showCity() {
+            if(citySelect.value === 'madrid') {
+                newItem.setAttribute('src', './images/madrid.jpg');
+            } else if(citySelect.value === 'newyork') {
+                newItem.setAttribute('src', './images/newyork.jpg');
+            } else if(citySelect.value === 'paris') {
+                newItem.setAttribute('src', './images/paris.jpg')
+            }
+        };
+
+        // function showCity() {
+        //     const city = citySelect.value.toLowerCase()
+        //     newItem.setAttribute('src', `./images/${city}.jpg`);
+        // }
+
+        //Event listener -> el elemento select esta escuchando un 'cambio de valor' change para ejecutar la function showCity()
+
+        citySelect.addEventListener('change', showCity);
+        showCity()
+    </script>
+    </div>
+  </body>
+</html>

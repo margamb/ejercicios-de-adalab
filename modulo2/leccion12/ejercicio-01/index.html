@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1, 2, 3, lo hacemos otra vez</title>
+  </head>
+  <body>
+    <ul class="ulList"></ul>
+
+    <!-- <label class="firstname-label"></label>   for="firstname" -->
+    <input type="text" name="firstname" id="firstname" value="Ada" />
+
+    <script>
+      const numbers = [1, 2, 3];
+      const ulList = document.querySelector('.ulList');
+
+      //   const newItem = document.createElement('li');
+      //   console.log(newItem);
+      //   const newContent = document.createTextNode(numbers[0]);
+      //   console.log(newContent);
+      //   newItem.appendChild(newContent);
+      //   console.log(newItem);
+      //   ulList.appendChild(newItem);
+
+      for (let i = 0; i < numbers.length; i++) {
+        const newItem = document.createElement('li');
+        const newContent = document.createTextNode(numbers[i]);
+        newItem.appendChild(newContent);
+        ulList.appendChild(newItem);
+      }
+
+      numbers.forEach((num) => {
+        const newItem = document.createElement('li');
+        const newContent = document.createTextNode(num);
+        newItem.appendChild(newContent);
+        ulList.appendChild(newItem);
+      });
+
+      for (i in numbers) {
+        const newItem = document.createElement('li');
+        const newContent = document.createTextNode(numbers[i]);
+        newItem.appendChild(newContent);
+        ulList.appendChild(newItem);
+      }
+
+      ///////
+
+      const nameInput = document.querySelector('#firstname');
+      console.log(nameInput.value);
+      nameInput.value = 'Joan';
+      console.log(nameInput.value);
+      nameInput.style.backgroundColor = 'red';
+      nameInput.style = 'color: red; color: blue;';
+    </script>
+  </body>
+</html>

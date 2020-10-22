@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Castigo</title>
+  </head>
+  <body>
+    <div class="ulList"></div>
+
+    <!-- <select name="color" id="color-text">
+      <option value="blanco">blanco</option>
+      <option value="azul" selected>azul</option>
+      <option value="verde">verde</option>
+      <option value="amarillo">amarillo</option>
+      <option value="rosa">rosa</option>
+    </select> -->
+
+    <script>
+      const ulList = document.querySelector('.ulList');
+
+      function copy() {
+        for (let i = 0; i < 100; i++) {
+          const newItem = document.createElement('li');
+          const newContent = document.createTextNode(
+            'He aprendido bien como funcionan los bucles'
+          );
+          newItem.appendChild(newContent);
+          ulList.appendChild(newItem);
+          const select = document.createElement('select');
+          select.setAttribute('id', 'color-text');
+          newItem.appendChild(select);
+          //for (let i = 0; i < select.length; i++) {
+          const white = document.createElement('option');
+          white.setAttribute('value', 'blanco');
+          const whiteText = document.createTextNode('blanco');
+          white.appendChild(whiteText);
+          select.appendChild(white);
+
+          const blue = document.createElement('option');
+          blue.setAttribute('value', 'azul');
+          const blueText = document.createTextNode('azul');
+          blue.appendChild(blueText);
+          select.appendChild(blue);
+
+          const green = document.createElement('option');
+          green.setAttribute('value', 'verde');
+          const greenText = document.createTextNode('verde');
+          green.appendChild(greenText);
+          select.appendChild(green);
+          //}
+        }
+      }
+      copy();
+
+      const shareLink = document.querySelector('.');
+      const btnShare = document.querySelector('.');
+      const openShare = function () {
+        shareLink.display = 'block';
+        btnShare.style.opacity = '0.5';
+      };
+      btnShare.addEventListener('click', openShare);
+    </script>
+  </body>
+</html>

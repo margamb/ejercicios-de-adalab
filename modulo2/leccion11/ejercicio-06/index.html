@@ -6,28 +6,33 @@
     <title>Conociendo LS -> local storage</title>
   </head>
   <body>
-    <form action="" method="">
-      <input class="input" type="text" value="name" />
-      <input class="input" type="text" value="surname" />
-    </form>
-    <p class="text"></p>
-    <p class="text"></p>
+    <input class="name" type="text" />
+    <input class="last-name" type="text" />
+    <p></p>
 
     <script>
       'use strict';
-      const input = document.querySelectorAll('.input');
-      const text = document.querySelectorAll('.text');
+      const username = document.querySelector('.name');
+      const lastName = document.querySelector('.last-name');
 
-      function getInput() {
-        const inputValue = input.value;
-        text.innerHTML = inputValue;
-        console.log(inputValue);
-        localStorage.setItem('name', inputValue);
-      }
-      input.addEventListener('keyup', getInput);
+      document.addEventListener('keyup', function () {
+        //Pintar en HTML
+        const paragraph = document.querySelector('p');
+        paragraph.innerHTML = username.value + ' ' + lastName.value;
 
-      const name = localStorage.getItem('name');
-      console.log(name);
+        // Creo objeto con los datos
+        const userInfo = {
+          name: username.value,
+          lastName: lastName.value,
+        };
+
+        // Guardar en el localstorage
+        // Recuerda hacer stringify!! pasar el objeto a string
+        localStorage.setItem('userInfo', JSON.stringify(userInfo));
+      });
+
+      //Recuerda que localStore NO puede guardar arrays ni objetos
+      //Tenemos que utilizar e metodo JSON.stringify para convertir un objeto o array en una cadena array.
     </script>
   </body>
 </html>

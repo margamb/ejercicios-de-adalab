@@ -11,9 +11,13 @@
     </style>
   </head>
   <body>
-    <ul class="task"></ul>
+    <ul class="js-list"></ul>
+
+    <!-- https://books.adalab.es/materiales-front-end-k/modulo-2-programando-la-web/2_9_array_y_bucles_2#ejercicio-4 -->
 
     <script>
+      'use strict';
+
       const tasks = [
         { name: 'Recoger setas en el campo', completed: true },
         { name: 'Comprar pilas', completed: true },
@@ -25,23 +29,65 @@
         },
       ];
 
-      const task = document.querySelector('.task');
-      console.log(tasks[0].name);
+      //paint
+      function paintTask() {
+        const listElement = document.querySelector('.js-list');
+        listElement.innerHTML = '';
 
-      //   const listTask = tasks[0].name;
-      let tasksPrint = [];
-      const printTask = function () {
         for (let i = 0; i < tasks.length; i++) {
-          tasksPrint.push(
-            `<li class=${tasks[i].completed && 'completed'}>${
-              tasks[i].name
-            }</li> <input type="checkbox" checked=${tasks[i].completed}  >`
-          );
-        }
-        task.innerHTML = tasksPrint.join('');
-      };
+          let completedClass;
+          let checkeAttr;
+          if (tasks[i].completed === true) {
+            completedClass = 'completed';
+            checkeAttr = 'checked';
+          } else {
+            completedClass = '';
+            checkeAttr = '';
+          }
 
-      printTask();
+          listElement.innerHTML += `<li class="${completedClass}">
+            <input type="checkbox" ${checkeAttr} class="js-list-check" id=${i}>
+            <span>${tasks[i].name}</span>
+          </li>`;
+        }
+      }
+
+      // listen events
+      function toggleTast(ev) {
+        const clickedId = ev.target.id;
+        tasks[clickedId].completed = !tasks[clickedId].completed;
+        paintTask();
+        listenEvents();
+      }
+
+      function listenEvents() {
+        const checkboxElements = document.querySelectorAll('.js-list-check');
+        for (const checkboxElement of checkboxElements) {
+          checkboxElement.addEventListener('change', toggleTast);
+        }
+      }
+
+      //start app
+      paintTask();
+      listenEvents();
+
+      // const task = document.querySelector('.task');
+      // console.log(tasks[0].name);
+
+      // //   const listTask = tasks[0].name;
+      // let tasksPrint = [];
+      // const printTask = function () {
+      //   for (let i = 0; i < tasks.length; i++) {
+      //     tasksPrint.push(
+      //       `<li class=${tasks[i].completed && 'completed'}>${
+      //         tasks[i].name
+      //       }</li> <input type="checkbox" checked=${tasks[i].completed}  >`
+      //     );
+      //   }
+      //   task.innerHTML = tasksPrint.join('');
+      // };
+
+      // printTask();
     </script>
   </body>
 </html>

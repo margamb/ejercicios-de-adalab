@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>method map</title>
+  </head>
+  <body>
+    <script>
+      const marks = [5, 4, 6, 7, 9];
+      const inflatedMarks = marks.map((mark) => mark + 1);
+      console.log(inflatedMarks);
+
+      //Saludar es de buena educación
+      const names = ['María', 'Lucía', 'Susana', 'Rocío', 'Inmaculada'];
+      const sayHello = names.map((name) => 'Bienvenida ' + name);
+      console.log(sayHello);
+
+      //Gracias por confiar en nosotros
+      const users = [
+        { name: 'María', isPremium: false },
+        { name: 'Lucía', isPremium: true },
+        { name: 'Susana', isPremium: true },
+        { name: 'Rocío', isPremium: false },
+        { name: 'Inmaculada', isPremium: false },
+      ];
+
+      const sayHello1 = users.map((user) => {
+        if (user.isPremium === true) {
+          return `Bienvenida ${user.name} Gracias por confiar en nosotros.`;
+        } else {
+          return `Bienvenida ${user.name}`;
+        }
+      });
+
+      const sayHello2 = users.map((user) =>
+        user.isPremium === true
+          ? `Bienvenida ${user.name} Gracias por confiar en nosotros.`
+          : `Bienvenida ${user.name}`
+      );
+
+      console.log(sayHello1);
+      console.log(sayHello2);
+
+      //   for (const user of users) {
+      //     if (user.isPremium === true) {
+      //       console.log(`Bienvenida ${user.name}`);
+      //     }
+      //   }
+    </script>
+  </body>
+</html>
