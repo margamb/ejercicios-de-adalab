@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio Bonus A</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  class Polygon {
+    constructor(numberOfSides, base, height) {
+      this.numberOfSides = numberOfSides;
+      this.base = base;
+      this.height = height;
+    }
+    perimeter() {
+      return this.base * this.numberOfSides;
+    }
+    area() {
+      return this.base * this.height;
+    }
+  }
+
+  class Square extends Polygon {
+    constructor(length) {
+      super(4, length, length);
+      this.side = this.base;
+    }
+  }
+
+  class Triangle extends Polygon {
+    constructor(base, height) {
+      super(3, base, height);
+    }
+    area() {
+      return this.base / 2;
+    }
+  }
+
+  const sq1 = new Square(4); //instancia(copia)
+  console.log(sq1.perimeter());
+  console.log(sq1.area());
+
+  const triangle = new Triangle(4, 3); //instancia(copia)
+  console.log(triangle.perimeter());
+  console.log(triangle.area());
+</script>

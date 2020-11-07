@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculos</title>
+  </head>
+  <body>
+    <script>
+      class Square {
+        constructor(side) {
+          //atributo
+          this.side = side;
+        }
+        perimeter() {
+          //method
+          return this.side * 4;
+        }
+        area() {
+          return this.side * this.side;
+        }
+      }
+
+      const sq1 = new Square(1); //instancia(copia)
+      const sq3 = new Square(3); //instancia(copia)
+      const sq7 = new Square(7); //instancia(copia)
+      console.log(sq1.perimeter());
+      console.log(sq1.area());
+      console.log(sq3.perimeter());
+      console.log(sq3.area());
+      console.log(sq7.perimeter());
+      console.log(sq7.area());
+    </script>
+  </body>
+</html>
